@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>FIR Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<h2>⚖️ LexGuardian</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="upload.html">Upload File</a></li>
+<li><a href="fir.html">FIR Generator</a></li>
+<li><a href="summarize.html">summarize</a></li>
+<li><a href="draft.html">draft</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<h1>Generate FIR</h1>
+
+<textarea id="firInput" placeholder="Describe the incident"></textarea>
+
+<button onclick="generateFIR()">Generate FIR</button>
+
+<pre id="firOutput"></pre>
+
+</div>
+<h2>🚓 Find Nearby Police Station</h2>
+
+<input type="text" id="locationInput" placeholder="Enter your location (e.g. Kolkata)">
+<br><br>
+
+<button onclick="findPolice()">Find Police Stations</button>
+
+<script>
+function findPolice() {
+    const location = document.getElementById("locationInput").value;
+
+    if (!location) {
+        alert("Please enter a location");
+        return;
+    }
+
+    // ✅ Opens Google Maps directly
+    const url = "https://www.google.com/maps/search/police+station+near+" 
+                + encodeURIComponent(location);
+
+    window.open(url, "_blank");
+}
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
